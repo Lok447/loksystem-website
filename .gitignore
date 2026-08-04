@@ -1,0 +1,12 @@
+node_modules
+dist
+artifacts
+*.log
+*.local
+.env
+.env.*
+public/releases/*.zip
+public/releases/*.exe
+public/releases/*.dmg
+public/releases/*.AppImage
+!public/releases/latest.json

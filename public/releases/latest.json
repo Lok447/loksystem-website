@@ -1,0 +1,18 @@
+{
+  "version": "2.0.8",
+  "channel": "latest",
+  "platform": "windows-x64",
+  "fileName": "LokSystem-2.0.8-win-x64.exe",
+  "fileSize": "构建完成后公布",
+  "url": "https://update.lokai.net.cn/stable/LokSystem-2.0.8-win-x64.exe",
+  "githubReleaseUrl": "https://github.com/Lok447/loksystem-releases/releases/tag/v2.0.8",
+  "sha256": "待 2.0.8 安装包构建完成后公布",
+  "publishedAt": "2026-08-05",
+  "sourceBuild": "Lok447/loksystem v2.0.8",
+  "notes": [
+    "LokSystem 2.0.8 Windows x64 public beta release.",
+    "The homepage primary download uses the China mainland update channel.",
+    "GitHub Releases provides the mirror release page and history.",
+    "The installer is currently unsigned and Windows may show an unknown publisher warning."
+  ]
+}
