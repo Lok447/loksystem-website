@@ -49,50 +49,71 @@ const release: ReleaseInfo = {
 }
 
 const heroStats = [
-  { value: '多 Agent', label: '统一入口' },
-  { value: '本地文件', label: '上下文协作' },
-  { value: `v${release.version}`, label: '公开基线版' },
+  { value: '多 Agent', label: '统一工作入口' },
+  { value: '本地优先', label: '文件与交付物' },
+  { value: `v${release.version}`, label: 'Windows 公测版' },
 ]
 
 const capabilities: Capability[] = [
   {
     accent: '01',
-    title: '一个入口管理多类 Agent',
+    title: '多模型与多 Agent，统一管理',
     description:
-      '把 LokCLI、研发智能体、办公技能和常用模型放到同一个桌面工作台，用户不用在多个终端、网页和配置文件之间来回切换。',
-    points: ['新会话', '模型管理', '智能体管理'],
+      '在同一个桌面工作台接入主流模型、LokCLI/Hermes、Codex、Claude Code、Qwen Code 与自定义助手，减少终端、网页和配置文件之间的切换。',
+    points: ['模型管理', 'Agent 切换', '助手预设'],
   },
   {
     accent: '02',
-    title: '围绕文件和任务持续工作',
+    title: '围绕本地文件持续推进任务',
     description:
-      '在同一个输入区发消息、上传文件、关联文件夹或创建定时任务，让 Agent 带着上下文推进研究、分析、生成和总结。',
-    points: ['关联文件夹', '定时任务', '一键工作总结'],
+      '关联项目文件夹、上传资料并保留会话上下文，让 Agent 能够读取、生成和修改真实文件，结果直接落到用户可见的工作区。',
+    points: ['文件夹上下文', '文件预览', '本地交付'],
   },
   {
     accent: '03',
-    title: '从个人效率走向团队协作',
+    title: '过程可见，结果可继续编辑',
     description:
-      '桌面端先把个人工作流跑顺，再通过团队协作、远程管理和 WebUI 扩展到更多角色，逐步沉淀组织级 AI 工作方式。',
-    points: ['团队协作', '远程管理', 'WebUI'],
+      '在会话中查看推理、工具调用、文件变更与任务进度，生成的文档、表格、代码和多媒体内容可以继续预览、修改与复用。',
+    points: ['步骤追踪', '变更查看', '交付物预览'],
+  },
+  {
+    accent: '04',
+    title: '办公内容与多模态生产',
+    description:
+      '支持 Word、Excel、PPT、PDF、图片和视频相关任务，把资料分析、内容生成与文件交付放进同一条工作链路。',
+    points: ['文档表格', '演示材料', '图片视频'],
+  },
+  {
+    accent: '05',
+    title: '定时任务与会议整理',
+    description:
+      '将日报、研究和信息整理变成可回看的定时任务；也可导入或录制会议音频，生成摘要、行动项与决议。',
+    points: ['任务日历', '会议转写', '行动项'],
+  },
+  {
+    accent: '06',
+    title: '从个人使用扩展到团队',
+    description:
+      '通过 Team Mode、共享任务和消息流组织多个 Agent，再按需要接入 WebUI、远程管理与常用消息通道。',
+    points: ['Team Mode', 'WebUI', '远程通道'],
   },
 ]
 
 const scenarios: TextBlock[] = [
   {
-    title: '研发与技术交付',
+    title: '研发、测试与发布',
     description:
-      '把命令行 Agent 放进桌面工作区，围绕项目目录完成需求拆解、代码修改、发布检查和问题复盘。',
+      '把命令行 Agent 放进桌面工作区，围绕项目目录完成需求拆解、代码修改、自动化测试、发布检查和问题复盘。',
   },
   {
-    title: '资料生产与内容交付',
+    title: '研究、资料与内容交付',
     description:
-      '围绕文档、表格、PPT、PDF、图片和视频类任务组织上下文，让 Agent 从问答走向可交付内容生产。',
+      '围绕文档、表格、PPT、PDF、图片和视频组织上下文，让 Agent 从信息收集走向结构化、可继续编辑的交付成果。',
   },
   {
-    title: '团队试点与流程沉淀',
+    title: '个人业务与小团队协作',
     description:
-      '把个人高频任务变成团队可复用流程，再逐步接入远程管理、WebUI 和国内下载分发体系。',
+      '先把高频个人任务沉淀为稳定流程，再用定时任务、Team Mode、WebUI 和远程通道扩展到更多成员。',
   },
 ]
 
@@ -100,39 +121,44 @@ const workflow: WorkflowItem[] = [
   {
     step: '01',
     title: '安装桌面工作台',
-    description:
-      '下载 Windows x64 安装器，完成本地桌面环境初始化，并通过 SHA256 核对文件完整性。',
+    description: '从官网获取 Windows x64 公测版，安装前核对文件名、大小与 SHA-256。',
   },
   {
     step: '02',
-    title: '接入模型与智能体',
+    title: '配置模型与 Agent',
     description:
-      '配置模型供应商、LokCLI、技能和工作区权限，让不同任务拥有合适的执行角色。',
+      '配置模型供应商、LokCLI/Hermes、技能与工作区权限，为不同任务选择合适的执行角色。',
   },
   {
     step: '03',
-    title: '沉淀可复用工作流',
+    title: '完成任务并沉淀结果',
     description:
-      '围绕文件、会话、定时任务和团队协作形成稳定流程，再扩展到 WebUI 与远程访问。',
+      '在会话中检查执行过程和文件变更，将结果保存在工作区，再把高频任务转为自动化或团队流程。',
   },
 ]
 
 const trustItems = [
-  '当前主下载入口使用 LokSystem 国内更新通道，GitHub Releases 提供备用发布页。',
-  '官网同步展示版本号、文件名、发布时间和 SHA256 校验值，方便用户核对来源。',
-  '安装包存放在独立发布存储中，不进入官网代码仓库，也不会被打包进桌面应用。',
+  '桌面端代码采用 Apache-2.0 许可证；公开发布记录和下载资产可在 GitHub Releases 核对。',
+  '主下载使用国内更新通道，GitHub Releases 提供备用发布页和历史版本。',
+  '官网公布版本号、文件名、大小、发布时间和 SHA-256，方便安装前核对来源。',
+  '本地文件默认在用户选择的工作区中处理；具体数据边界以隐私政策和所接入模型服务为准。',
 ]
 
 const faqs: FaqItem[] = [
   {
     question: '现在可以直接下载 LokSystem 吗？',
     answer:
-      '2.0.8 安装包发布后可以。官网主下载使用国内更新通道，GitHub Releases 同时提供备用发布入口。',
+      '可以。当前公开版本是 2.0.8 Windows x64 公测版，官网提供国内下载入口，GitHub Releases 提供备用发布页和历史版本。',
   },
   {
     question: '官网展示的是实际产品界面吗？',
     answer:
       '是的。首屏产品图使用当前 LokSystem 桌面端实际界面截图，后续版本更新时只需要替换 public/product/loksystem-app-screenshot.png。',
+  },
+  {
+    question: '安装后可以自动更新吗？',
+    answer:
+      '可以。2.0.8 已接入正式更新通道，后续发布兼容版本时可在应用内检查、下载并安装更新。建议更新前保留重要工作区备份。',
   },
   {
     question: '为什么要展示 SHA256？',
@@ -143,6 +169,11 @@ const faqs: FaqItem[] = [
     question: '为什么 Windows 显示“未知发布者”？',
     answer:
       '当前公开测试版暂未进行 Windows 代码签名，因此系统可能显示“未知发布者”。请仅从官网或官方 GitHub Release 下载，并在安装前核对 SHA256。',
+  },
+  {
+    question: '遇到问题如何反馈？',
+    answer:
+      '请将可复现步骤、系统版本和必要日志发送至 lok24357@gmail.com；请勿在邮件或截图中包含账号密码、API Key 等敏感信息。',
   },
 ]
 
@@ -261,29 +292,33 @@ function App() {
           <span>LokSystem</span>
         </a>
         <nav className="nav-links">
-          <a href="#product">产品</a>
+          <a href="#product">能力</a>
           <a href="#scenarios">场景</a>
           <a href="#download">下载</a>
           <a href="#faq">FAQ</a>
+          <a href={release.githubReleaseUrl}>GitHub</a>
         </nav>
       </header>
 
       <section className="hero-section" id="top">
         <div className="hero-content">
-          <p className="eyebrow">LokSystem Official Release</p>
+          <p className="eyebrow">Windows Public Beta · v{release.version}</p>
           <h1>LokSystem AI Agent 桌面工作台</h1>
           <p className="hero-lede">
-            一个面向 Windows 用户的 AI 工作入口：统一会话、模型、智能体、技能、文件上下文和团队协作。
-            从发消息到上传文件，从深度研究到一键总结，让 AI 真正进入日常工作流。
+            把多模型、智能体、技能和本地文件放进一个工作区。从需求到执行过程，再到文档、表格、代码与多媒体交付，
+            让 AI 不只回答问题，而是持续推进真实任务。
           </p>
           <div className="hero-actions">
             <a className="primary-action" href={release.downloadUrl} download>
               下载 Windows x64
             </a>
             <a className="secondary-action" href={release.githubReleaseUrl}>
-              查看 GitHub Release
+              查看发布记录
             </a>
           </div>
+          <p className="hero-release-note">
+            当前为 Windows x64 公测版，安装时可能显示“未知发布者”。请从官方入口下载并核对 SHA-256。
+          </p>
           <div className="hero-stats" aria-label="Current release summary">
             {heroStats.map((item) => (
               <div key={item.label}>
@@ -300,19 +335,19 @@ function App() {
       </section>
 
       <section className="signal-strip" aria-label="Product signals">
-        <span>桌面 Agent 工作台</span>
-        <span>多模型与智能体</span>
-        <span>文件夹上下文</span>
-        <span>团队协作与远程管理</span>
+        <span>Apache-2.0 许可</span>
+        <span>本地文件工作区</span>
+        <span>执行过程可追踪</span>
+        <span>国内下载与自动更新</span>
       </section>
 
       <section className="product-section" id="product" aria-labelledby="product-title">
         <div className="section-heading wide">
-          <p className="eyebrow">Product Positioning</p>
-          <h2 id="product-title">不是又一个聊天窗口，而是可持续使用的 AI 工作台</h2>
+          <p className="eyebrow">What You Can Do</p>
+          <h2 id="product-title">从一次提问，走向一条可持续执行的工作流</h2>
           <p>
-            LokSystem 把常用 AI 能力收进桌面应用：新会话、对话搜索、模型管理、智能体管理、技能管理、定时任务和团队协作，
-            让用户从单次提问走向连续工作。
+            LokSystem 不替用户隐藏过程。模型、Agent、文件上下文、工具调用、变更记录和最终交付都在同一工作区中呈现，
+            便于检查、继续编辑和复用。
           </p>
         </div>
 
@@ -335,9 +370,9 @@ function App() {
       <section className="workflow-section" aria-labelledby="workflow-title">
         <div className="workflow-copy">
           <p className="eyebrow">How It Works</p>
-          <h2 id="workflow-title">从安装到协作，把 AI 工作流落在桌面上</h2>
+          <h2 id="workflow-title">安装、配置、执行，三步开始真实任务</h2>
           <p>
-            当前版本优先提供稳定的 Windows 桌面工作台、公开安装包和版本校验，并通过独立官网与国内更新通道完成分发。
+            不需要先搭建复杂平台。选择一个可用模型和工作区，就可以从熟悉的桌面环境开始。
           </p>
         </div>
         <div className="workflow-grid">
@@ -354,7 +389,7 @@ function App() {
       <section className="scenario-section" id="scenarios" aria-labelledby="scenarios-title">
         <div className="section-heading">
           <p className="eyebrow">Use Cases</p>
-          <h2 id="scenarios-title">面向真实任务，而不是只停留在演示</h2>
+          <h2 id="scenarios-title">先解决高频任务，再逐步沉淀团队能力</h2>
         </div>
         <div className="scenario-grid">
           {scenarios.map((scenario) => (
@@ -369,9 +404,9 @@ function App() {
       <section className="download-section" id="download" aria-labelledby="download-title">
         <div className="download-copy">
           <p className="eyebrow">Download Center</p>
-          <h2 id="download-title">下载最新公开基线版本</h2>
+          <h2 id="download-title">下载 LokSystem {release.version}</h2>
           <p>
-            当前主下载入口通过国内更新通道分发，GitHub Releases 提供备用发布页和历史版本记录。
+            主下载入口通过国内更新通道分发，GitHub Releases 提供备用发布页和历史记录。安装前请核对下方信息。
           </p>
         </div>
 
@@ -380,7 +415,7 @@ function App() {
             <p className="card-kicker">{release.channel}</p>
             <h3>LokSystem {release.version}</h3>
             <p>
-              适用于 {release.platform} 的公开安装器，适合用户下载安装并完成最新版本校验。
+              面向个人、OPC 和小团队的公开测试版本。安装完成后可在应用内继续接收后续兼容更新。
             </p>
             <div className="download-actions">
               <a className="download-button" href={release.downloadUrl} download>
@@ -424,12 +459,19 @@ function App() {
           <span>SHA256</span>
           <code>{release.sha256}</code>
         </div>
+        <div className="install-notice">
+          <strong>安装提示</strong>
+          <p>
+            当前安装包未进行 Windows 代码签名，SmartScreen 或安装器可能显示“未知发布者”。这不代表文件校验失败；
+            请确认下载域名、文件名与 SHA-256 均和本页一致后再继续。
+          </p>
+        </div>
       </section>
 
       <section className="trust-section" aria-labelledby="trust-title">
         <div>
-          <p className="eyebrow">Release Trust</p>
-          <h2 id="trust-title">公开发布，必须让用户能核对来源</h2>
+          <p className="eyebrow">Open & Verifiable</p>
+          <h2 id="trust-title">版本和安装包来源都可以核对</h2>
         </div>
         <ul>
           {trustItems.map((item) => (
@@ -441,7 +483,7 @@ function App() {
       <section className="faq-section" id="faq" aria-labelledby="faq-title">
         <div className="section-heading">
           <p className="eyebrow">FAQ</p>
-          <h2 id="faq-title">发布与下载说明</h2>
+          <h2 id="faq-title">开始使用前常见问题</h2>
         </div>
         <div className="faq-list">
           {faqs.map((faq) => (
@@ -461,6 +503,8 @@ function App() {
         <nav className="footer-links" aria-label="Legal and filing links">
           <a href="/legal/user-agreement/">用户协议</a>
           <a href="/legal/privacy-policy/">隐私政策</a>
+          <a href="mailto:lok24357@gmail.com">问题反馈</a>
+          <a href={release.githubReleaseUrl}>GitHub Release</a>
           <a href="https://beian.miit.gov.cn/">粤ICP备2026107083号</a>
         </nav>
       </footer>

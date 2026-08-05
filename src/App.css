@@ -133,6 +133,14 @@
   margin-top: 34px;
 }
 
+.hero-release-note {
+  max-width: 680px;
+  margin: 16px auto 0;
+  color: var(--text-soft);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
 .primary-action,
 .secondary-action,
 .download-button,
@@ -836,6 +844,31 @@
   overflow-wrap: anywhere;
 }
 
+.install-notice {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  margin-top: 16px;
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  background: rgb(255 255 255 / 72%);
+}
+
+.install-notice strong {
+  color: var(--text-strong);
+  font-size: 14px;
+}
+
+.install-notice p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 .trust-section {
   display: grid;
   grid-template-columns: minmax(0, 0.78fr) minmax(380px, 1fr);
@@ -1025,7 +1058,7 @@
   }
 
   .hero-stage-wrap {
-    margin-top: 34px;
+    margin-top: 22px;
   }
 
   .product-window,
@@ -1141,6 +1174,12 @@
   .checksum-box {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .install-notice {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 18px;
   }
 
   .trust-section {
