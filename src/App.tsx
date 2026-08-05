@@ -38,14 +38,14 @@ const release: ReleaseInfo = {
   channel: 'Latest',
   platform: 'Windows x64',
   fileName: 'LokSystem-2.0.8-win-x64.exe',
-  fileSize: '构建完成后公布',
+  fileSize: '413.26 MB',
   publishedAt: '2026-08-05',
   downloadUrl:
     'https://update.lokai.net.cn/stable/LokSystem-2.0.8-win-x64.exe',
   githubReleaseUrl:
     'https://github.com/Lok447/loksystem-releases/releases/tag/v2.0.8',
   releaseNotesUrl: '/releases/latest.json',
-  sha256: '待 2.0.8 安装包构建完成后公布',
+  sha256: '940329D1E55637C68335080E605EF8EF763782DC95239A19A7EE284C4E710422',
 }
 
 const heroStats = [
