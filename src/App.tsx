@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Bot,
   Check,
@@ -29,6 +29,9 @@ const release = {
   downloadUrl:
     'https://update.lokai.net.cn/stable/LokSystem-2.0.8-win-x64.exe',
 }
+
+const trackedDownloadUrl = (source: 'hero' | 'download_section' | 'final_cta') =>
+  `https://api.lokai.net.cn/download/windows-x64?source=${source}`
 
 const capabilities = [
   {
@@ -216,6 +219,12 @@ function Brand() {
 }
 
 function App() {
+  useEffect(() => {
+    const viewBeacon = new Image()
+    viewBeacon.src =
+      'https://api.lokai.net.cn/telemetry/website-view.gif?page=homepage'
+  }, [])
+
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeFaq, setActiveFaq] = useState(0)
 
@@ -258,7 +267,7 @@ function App() {
             把模型、智能体、技能和本地文件放进同一个工作区，覆盖文档、表格、代码、图片与视频生成，让 AI 从理解需求走向多模态交付。
           </p>
           <div className="hero-actions">
-            <a className="button primary" href={release.downloadUrl} download>
+            <a className="button primary" href={trackedDownloadUrl('hero')}>
               <Download size={19} aria-hidden="true" />
               下载 Windows x64
             </a>
@@ -410,7 +419,7 @@ function App() {
             <h2 id="download-title">下载 LokSystem</h2>
             <p>面向个人、独立开发者和团队的 Windows x64 版本。</p>
             <div className="download-actions">
-              <a className="button primary" href={release.downloadUrl} download>
+              <a className="button primary" href={trackedDownloadUrl('download_section')}>
                 <Download size={19} />下载 {release.platform}
               </a>
             </div>
@@ -462,7 +471,7 @@ function App() {
           <h2>让 AI 开始推进真实任务</h2>
           <p>下载 LokSystem，把模型、Agent、技能和本地文件放进同一个工作区。</p>
         </div>
-        <a className="button light-button" href={release.downloadUrl} download>
+        <a className="button light-button" href={trackedDownloadUrl('final_cta')}>
           <Download size={19} />下载 Windows x64
         </a>
       </section>

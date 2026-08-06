@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="LokSystem 隐私政策，版本 2026-07-24。">
+    <meta name="description" content="LokSystem 隐私政策，版本 2026-08-06。">
     <link rel="canonical" href="https://www.lokai.net.cn/legal/privacy-policy">
     <title>LokSystem 隐私政策</title>
     <style>:root {
@@ -202,8 +202,8 @@ footer p {
       </div>
     </header>
     <main><h1>LokSystem 隐私政策</h1>
-<p>版本：<code>2026-07-24</code></p>
-<p>生效日期：<code>2026-07-24</code></p>
+<p>版本：<code>2026-08-06</code></p>
+<p>生效日期：<code>2026-08-06</code></p>
 <p>个人信息处理者：<code>深圳市洪网智能化科技有限公司</code>（以下简称“我们”）</p>
 <p>联系邮箱：<code>lok24357@gmail.com</code></p>
 <h2>1. 处理原则</h2>
@@ -246,10 +246,14 @@ footer p {
 <p>当您主动提交问题反馈并选择附加诊断信息时，应用可收集最近 3 天及可发现的相关日志，
 并在本地尝试删除 API Key、令牌、密码、邮箱、用户名路径和已知设备标识。自动脱敏是尽力而为，
 提交前仍应确认日志不含不希望分享的内容。</p>
+<p>为判断应用稳定性和自动更新是否成功，正式构建还可能向 LokSystem 账号服务发送匿名运行事件，
+仅包含事件类型、应用版本、操作系统、处理器架构、单次更新尝试标识、目标版本和归类后的失败原因。
+这些事件不包含邮箱、账号标识、对话内容、文件内容、提示词、模型输出、错误堆栈或本地文件路径。</p>
 <h3>2.5 邮件、更新和网络信息</h3>
 <ul>
 <li>邮箱验证码通过阿里云 DirectMail 发送时，邮箱地址、邮件内容和必要请求信息会发送至阿里云。</li>
-<li>检查更新或下载发行包时，GitHub 可能接收 IP、User-Agent 和下载请求信息。</li>
+<li>检查更新或下载发行包时，LokSystem、阿里云 CDN 或 GitHub 可能接收 IP、User-Agent、来源页面和下载请求信息；
+官网会记录页面访问次数、下载入口位置和跳转次数，用于计算匿名下载转化；该统计不使用 Cookie 或访客标识。</li>
 <li>启用 ngrok 公网访问时，相关网络流量将经过 ngrok，具体范围取决于您的隧道配置。</li>
 <li>启用飞书、钉钉、微信或企业微信等渠道时，消息和附件会按任务需要通过对应平台处理。</li>
 </ul>
@@ -273,6 +277,7 @@ footer p {
 <li>验证码：10 分钟后失效；过期记录在后续清理时删除。</li>
 <li>刷新令牌：默认 30 天失效；撤销与轮换记录可能为安全审计继续保留。</li>
 <li>数据库备份：每日生成，默认保留 14 天后自动删除；依法需要延长保存的除外。</li>
+<li>匿名运行与下载统计：服务端运行日志默认保留不超过 90 天，汇总后的非个人统计可长期保留。</li>
 <li>Sentry、阿里云、GitHub、ngrok、模型与渠道服务：按各服务商政策保留。</li>
 </ul>
 <h2>6. 信息安全</h2>
