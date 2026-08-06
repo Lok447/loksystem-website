@@ -10,7 +10,7 @@
   "publishedAt": "2026-08-05",
   "sourceBuild": "Lok447/loksystem v2.0.8",
   "notes": [
-    "LokSystem 2.0.8 Windows x64 public beta release.",
+    "LokSystem 2.0.8 Windows x64 release.",
     "The homepage primary download uses the China mainland update channel.",
     "GitHub Releases provides the mirror release page and history.",
     "The installer is currently unsigned and Windows may show an unknown publisher warning."
