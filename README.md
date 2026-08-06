@@ -1,6 +1,16 @@
 # LokSystem Website
 
-Official download website for LokSystem.
+Source for the official LokSystem product and download website at [www.lokai.net.cn](https://www.lokai.net.cn/). This repository is deployed independently from the Electron desktop application and never contains installer binaries or production credentials.
+
+## Repository Scope
+
+- Product positioning, workflows, supported capabilities, and system requirements
+- Windows download entry points and immutable release metadata
+- Product screenshots and brand assets
+- Privacy policy, user agreement, and other public legal pages
+- Cookie-free, identifier-free homepage and download conversion events
+
+Desktop application source lives in [Lok447/loksystem](https://github.com/Lok447/loksystem). Installers and release history live in [Lok447/loksystem-releases](https://github.com/Lok447/loksystem-releases/releases).
 
 ## Stack
 
@@ -15,11 +25,15 @@ bun install
 bun run dev
 ```
 
+Open the URL printed by Vite. Before publishing, verify desktop and mobile layouts, every navigation target, all legal pages, and every download button.
+
 ## Build
 
 ```bash
 bun run build
 ```
+
+The production build is written to `dist/`. Deploy the built output as a versioned directory and switch the web root only after smoke testing the new version.
 
 ## Release Metadata
 
@@ -39,7 +53,7 @@ When a new LokSystem package is published, update:
 - `publishedAt`
 - release notes
 
-The homepage currently mirrors the same values in `src/App.tsx` for static rendering.
+The homepage currently mirrors the same values in `src/App.tsx` for static rendering. Both sources must be changed in one commit so the visible download card and machine-readable metadata cannot drift.
 
 ## Product Screenshot
 
@@ -71,3 +85,15 @@ The homepage also sends one cache-disabled, cookie-free page-view request to
 `https://api.lokai.net.cn/telemetry/website-view.gif`. It carries only the
 allowlisted page name so download conversion can be calculated without a
 visitor identifier.
+
+## Release Checklist
+
+1. Publish the immutable installer and automatic-update metadata to the release channel.
+2. Calculate the final file size and SHA-256 from the published installer.
+3. Update `public/releases/latest.json` and the matching values in `src/App.tsx`.
+4. Run `bun run lint` and `bun run build`.
+5. Verify navigation, legal pages, download redirects, and responsive layouts locally.
+6. Deploy `dist/` to a new versioned server directory, then switch the active web root.
+7. Verify HTTPS, the root and `www` domains, the CDN download, and conversion events in production.
+
+Do not commit access keys, deployment tokens, private certificates, analytics identifiers, or copies of the installer to this repository.
