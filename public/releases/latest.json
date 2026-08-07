@@ -12,7 +12,7 @@
   "platforms": [
     {
       "platform": "windows-x64",
-      "status": "stable",
+      "status": "available",
       "fileName": "LokSystem-2.0.8-win-x64.exe",
       "fileSize": "413.26 MB (433334724 bytes)",
       "url": "https://update.lokai.net.cn/stable/LokSystem-2.0.8-win-x64.exe",
@@ -20,7 +20,7 @@
     },
     {
       "platform": "macos-arm64",
-      "status": "prerelease",
+      "status": "available",
       "fileName": "LokSystem-2.0.8-mac-arm64.dmg",
       "fileSize": "331.52 MB (347621078 bytes)",
       "url": "https://update.lokai.net.cn/prerelease/2.0.8-macos-beta-34c96ed/LokSystem-2.0.8-mac-arm64.dmg",
@@ -28,7 +28,7 @@
     },
     {
       "platform": "macos-x64",
-      "status": "prerelease",
+      "status": "available",
       "fileName": "LokSystem-2.0.8-mac-x64.dmg",
       "fileSize": "344.84 MB (361587742 bytes)",
       "url": "https://update.lokai.net.cn/prerelease/2.0.8-macos-beta-34c96ed/LokSystem-2.0.8-mac-x64.dmg",
@@ -37,7 +37,7 @@
   ],
   "notes": [
     "LokSystem 2.0.8 Windows x64 release.",
-    "LokSystem 2.0.8 macOS arm64 and x64 prerelease packages.",
+    "LokSystem 2.0.8 macOS arm64 and x64 packages.",
     "The homepage primary download uses the China mainland update channel.",
     "GitHub Releases provides the mirror release page and history.",
     "The installer is currently unsigned and Windows may show an unknown publisher warning."

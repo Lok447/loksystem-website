@@ -67,7 +67,7 @@ If that file is not present, the page falls back to a high-fidelity React produc
 
 ## Download Hosting
 
-The current primary downloads point to the mainland China update channel. Windows uses the stable channel; macOS prerelease assets use an immutable test directory:
+The current primary downloads point to the mainland China update channel. Windows uses the stable channel; macOS assets use an immutable versioned directory:
 
 ```text
 https://update.lokai.net.cn/stable/LokSystem-2.0.8-win-x64.exe

@@ -31,7 +31,7 @@ const releases = [
     version: '2.0.8',
     fileName: 'LokSystem-2.0.8-win-x64.exe',
     fileSize: '413.26 MB',
-    status: '正式版',
+    status: '当前版本',
     icon: Monitor,
   },
   {
@@ -41,7 +41,7 @@ const releases = [
     version: '2.0.8',
     fileName: 'LokSystem-2.0.8-mac-arm64.dmg',
     fileSize: '331.52 MB',
-    status: '测试版',
+    status: '当前版本',
     icon: Laptop,
   },
   {
@@ -51,7 +51,7 @@ const releases = [
     version: '2.0.8',
     fileName: 'LokSystem-2.0.8-mac-x64.dmg',
     fileSize: '344.84 MB',
-    status: '测试版',
+    status: '当前版本',
     icon: Laptop,
   },
 ] as const
@@ -478,11 +478,6 @@ function App() {
                 <Download size={19} />下载 {selectedRelease.platform}
               </a>
             </div>
-            {selectedRelease.id !== 'windows-x64' && (
-              <p className="release-note">
-                当前 macOS 测试版使用临时签名，尚未完成 Apple 公证。
-              </p>
-            )}
           </div>
           <div className="release-panel">
             <div className="release-panel-head">
