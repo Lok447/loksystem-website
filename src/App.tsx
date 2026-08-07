@@ -15,6 +15,7 @@ import {
   Presentation,
   ShieldCheck,
   Sparkles,
+  Terminal,
   Users,
   Video,
   Workflow,
@@ -45,14 +46,14 @@ const releases = [
     icon: Laptop,
   },
   {
-    id: 'macos-x64',
-    platform: 'macOS Intel',
+    id: 'linux-x64',
+    platform: 'Linux x64',
     architecture: 'x64',
     version: '2.0.8',
-    fileName: 'LokSystem-2.0.8-mac-x64.dmg',
-    fileSize: '344.84 MB',
+    fileName: 'LokSystem-2.0.8-linux-x64.deb',
+    fileSize: '360.23 MB',
     status: '当前版本',
-    icon: Laptop,
+    icon: Terminal,
   },
 ] as const
 
@@ -293,7 +294,7 @@ function App() {
         <div className="hero-copy">
           <div className="version-pill">
             <span aria-hidden="true" />
-            Windows 与 macOS · v{release.version}
+            Windows、macOS 与 Linux · v{release.version}
           </div>
           <h1>LokSystem</h1>
           <p className="hero-title">为执行真实任务而生的 AI Agent 统一协作工作台</p>
@@ -451,7 +452,7 @@ function App() {
           <div className="download-main">
             <p className="eyebrow">下载中心</p>
             <h2 id="download-title">下载 LokSystem</h2>
-            <p>提供 Windows x64、macOS Apple 芯片与 macOS Intel 版本。</p>
+            <p>提供 Windows x64、macOS Apple 芯片与 Linux x64 版本。</p>
             <div className="platform-selector" role="group" aria-label="选择下载平台">
               {releases.map((item) => {
                 const Icon = item.icon

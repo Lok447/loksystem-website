@@ -5,7 +5,7 @@ Source for the official LokSystem product and download website at [www.lokai.net
 ## Repository Scope
 
 - Product positioning, workflows, supported capabilities, and system requirements
-- Windows and macOS download entry points with immutable release metadata
+- Windows, macOS, and Linux download entry points with immutable release metadata
 - Product screenshots and brand assets
 - Privacy policy, user agreement, and other public legal pages
 - Cookie-free, identifier-free homepage and download conversion events
@@ -67,10 +67,11 @@ If that file is not present, the page falls back to a high-fidelity React produc
 
 ## Download Hosting
 
-The current primary downloads point to the mainland China update channel. Windows uses the stable channel; macOS assets use an immutable versioned directory:
+The current primary downloads point to the mainland China update channel. Windows and Linux use the stable channel; macOS Apple Silicon uses an immutable versioned directory:
 
 ```text
 https://update.lokai.net.cn/stable/LokSystem-2.0.8-win-x64.exe
+https://update.lokai.net.cn/stable/LokSystem-2.0.8-linux-x64.deb
 https://update.lokai.net.cn/prerelease/2.0.8-macos-beta-34c96ed/
 ```
 
@@ -79,7 +80,7 @@ GitHub Releases remains the mirror and release-history page. Installer binaries 
 Homepage download buttons use the first-party redirect endpoint at
 `https://api.lokai.net.cn/download/windows-x64`,
 `https://api.lokai.net.cn/download/macos-arm64`, and
-`https://api.lokai.net.cn/download/macos-x64`. These endpoints record only the
+`https://api.lokai.net.cn/download/linux-x64`. These endpoints record only the
 button placement and selected platform, then redirect to the immutable CDN installer URL. Keep
 `public/releases/latest.json` pointed directly at the CDN for machine-readable
 release metadata.

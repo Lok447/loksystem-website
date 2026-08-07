@@ -27,17 +27,18 @@
       "sha256": "3DF779D5278714ACC5294917E2D7F38A361AA23B242137FD2CD74F66AA84D646"
     },
     {
-      "platform": "macos-x64",
+      "platform": "linux-x64",
       "status": "available",
-      "fileName": "LokSystem-2.0.8-mac-x64.dmg",
-      "fileSize": "344.84 MB (361587742 bytes)",
-      "url": "https://update.lokai.net.cn/prerelease/2.0.8-macos-beta-34c96ed/LokSystem-2.0.8-mac-x64.dmg",
-      "sha256": "D47A09349ABB32D904F828ED6F85A896F9E28930B11DE12248BC686C86EBC071"
+      "fileName": "LokSystem-2.0.8-linux-x64.deb",
+      "fileSize": "360.23 MB (377727552 bytes)",
+      "url": "https://update.lokai.net.cn/stable/LokSystem-2.0.8-linux-x64.deb",
+      "sha256": "DD705BADB47D8530ACBB4EC13BF5EFA4E9DB5B683CD82D3F339D07014A7D7639"
     }
   ],
   "notes": [
     "LokSystem 2.0.8 Windows x64 release.",
-    "LokSystem 2.0.8 macOS arm64 and x64 packages.",
+    "LokSystem 2.0.8 macOS arm64 package.",
+    "LokSystem 2.0.8 Linux x64 Debian package.",
     "The homepage primary download uses the China mainland update channel.",
     "GitHub Releases provides the mirror release page and history.",
     "The installer is currently unsigned and Windows may show an unknown publisher warning."
