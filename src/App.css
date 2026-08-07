@@ -809,6 +809,58 @@
   margin-top: 28px;
 }
 
+.platform-selector {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 28px;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: 7px;
+  background: var(--border-strong);
+}
+
+.platform-selector button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 50px;
+  padding: 8px 10px;
+  border: 0;
+  color: var(--muted);
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 740;
+  cursor: pointer;
+}
+
+.platform-selector button:hover,
+.platform-selector button.selected {
+  color: var(--signal-dark);
+  background: var(--signal-soft);
+}
+
+.platform-selector button:focus-visible {
+  position: relative;
+  outline: 2px solid var(--signal);
+  outline-offset: -2px;
+}
+
+.platform-selector svg {
+  flex: 0 0 auto;
+  width: 17px;
+}
+
+.release-note {
+  margin: 14px 0 0;
+  color: var(--soft);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
 .release-panel {
   overflow: hidden;
   border: 1px solid var(--border-strong);
@@ -1294,6 +1346,10 @@
 
   .download-actions {
     display: grid;
+  }
+
+  .platform-selector {
+    grid-template-columns: 1fr;
   }
 
   .download-actions .button {

@@ -9,8 +9,35 @@
   "sha256": "940329D1E55637C68335080E605EF8EF763782DC95239A19A7EE284C4E710422",
   "publishedAt": "2026-08-05",
   "sourceBuild": "Lok447/loksystem v2.0.8",
+  "platforms": [
+    {
+      "platform": "windows-x64",
+      "status": "stable",
+      "fileName": "LokSystem-2.0.8-win-x64.exe",
+      "fileSize": "413.26 MB (433334724 bytes)",
+      "url": "https://update.lokai.net.cn/stable/LokSystem-2.0.8-win-x64.exe",
+      "sha256": "940329D1E55637C68335080E605EF8EF763782DC95239A19A7EE284C4E710422"
+    },
+    {
+      "platform": "macos-arm64",
+      "status": "prerelease",
+      "fileName": "LokSystem-2.0.8-mac-arm64.dmg",
+      "fileSize": "331.52 MB (347621078 bytes)",
+      "url": "https://update.lokai.net.cn/prerelease/2.0.8-macos-beta-34c96ed/LokSystem-2.0.8-mac-arm64.dmg",
+      "sha256": "3DF779D5278714ACC5294917E2D7F38A361AA23B242137FD2CD74F66AA84D646"
+    },
+    {
+      "platform": "macos-x64",
+      "status": "prerelease",
+      "fileName": "LokSystem-2.0.8-mac-x64.dmg",
+      "fileSize": "344.84 MB (361587742 bytes)",
+      "url": "https://update.lokai.net.cn/prerelease/2.0.8-macos-beta-34c96ed/LokSystem-2.0.8-mac-x64.dmg",
+      "sha256": "D47A09349ABB32D904F828ED6F85A896F9E28930B11DE12248BC686C86EBC071"
+    }
+  ],
   "notes": [
     "LokSystem 2.0.8 Windows x64 release.",
+    "LokSystem 2.0.8 macOS arm64 and x64 prerelease packages.",
     "The homepage primary download uses the China mainland update channel.",
     "GitHub Releases provides the mirror release page and history.",
     "The installer is currently unsigned and Windows may show an unknown publisher warning."

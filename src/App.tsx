@@ -8,7 +8,9 @@ import {
   FileText,
   FolderKanban,
   ImageIcon,
+  Laptop,
   Menu,
+  Monitor,
   MonitorUp,
   Presentation,
   ShieldCheck,
@@ -21,17 +23,45 @@ import {
 } from 'lucide-react'
 import './App.css'
 
-const release = {
-  version: '2.0.8',
-  platform: 'Windows x64',
-  fileName: 'LokSystem-2.0.8-win-x64.exe',
-  fileSize: '413.26 MB',
-  downloadUrl:
-    'https://update.lokai.net.cn/stable/LokSystem-2.0.8-win-x64.exe',
-}
+const releases = [
+  {
+    id: 'windows-x64',
+    platform: 'Windows x64',
+    architecture: 'x64',
+    version: '2.0.8',
+    fileName: 'LokSystem-2.0.8-win-x64.exe',
+    fileSize: '413.26 MB',
+    status: '正式版',
+    icon: Monitor,
+  },
+  {
+    id: 'macos-arm64',
+    platform: 'macOS Apple 芯片',
+    architecture: 'arm64',
+    version: '2.0.8',
+    fileName: 'LokSystem-2.0.8-mac-arm64.dmg',
+    fileSize: '331.52 MB',
+    status: '测试版',
+    icon: Laptop,
+  },
+  {
+    id: 'macos-x64',
+    platform: 'macOS Intel',
+    architecture: 'x64',
+    version: '2.0.8',
+    fileName: 'LokSystem-2.0.8-mac-x64.dmg',
+    fileSize: '344.84 MB',
+    status: '测试版',
+    icon: Laptop,
+  },
+] as const
 
-const trackedDownloadUrl = (source: 'hero' | 'download_section' | 'final_cta') =>
-  `https://api.lokai.net.cn/download/windows-x64?source=${source}`
+type ReleaseId = (typeof releases)[number]['id']
+type DownloadSource = 'hero' | 'download_section' | 'final_cta'
+
+const release = releases[0]
+const trackedDownloadUrl = (platform: ReleaseId, source: DownloadSource) =>
+  `https://api.lokai.net.cn/download/${platform}?source=${source}`
 
 const capabilities = [
   {
@@ -227,6 +257,10 @@ function App() {
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeFaq, setActiveFaq] = useState(0)
+  const [selectedReleaseId, setSelectedReleaseId] =
+    useState<ReleaseId>('windows-x64')
+  const selectedRelease =
+    releases.find((item) => item.id === selectedReleaseId) ?? release
 
   const closeMenu = () => setMenuOpen(false)
 
@@ -259,7 +293,7 @@ function App() {
         <div className="hero-copy">
           <div className="version-pill">
             <span aria-hidden="true" />
-            Windows x64 · v{release.version}
+            Windows 与 macOS · v{release.version}
           </div>
           <h1>LokSystem</h1>
           <p className="hero-title">为执行真实任务而生的 AI Agent 统一协作工作台</p>
@@ -267,9 +301,9 @@ function App() {
             把模型、智能体、技能和本地文件放进同一个工作区，覆盖文档、表格、代码、图片与视频生成，让 AI 从理解需求走向多模态交付。
           </p>
           <div className="hero-actions">
-            <a className="button primary" href={trackedDownloadUrl('hero')}>
+            <a className="button primary" href="#download">
               <Download size={19} aria-hidden="true" />
-              下载 Windows x64
+              选择下载版本
             </a>
           </div>
           <div className="hero-proof" aria-label="产品特性">
@@ -417,22 +451,49 @@ function App() {
           <div className="download-main">
             <p className="eyebrow">下载中心</p>
             <h2 id="download-title">下载 LokSystem</h2>
-            <p>面向个人、独立开发者和团队的 Windows x64 版本。</p>
+            <p>提供 Windows x64、macOS Apple 芯片与 macOS Intel 版本。</p>
+            <div className="platform-selector" role="group" aria-label="选择下载平台">
+              {releases.map((item) => {
+                const Icon = item.icon
+                const selected = item.id === selectedReleaseId
+                return (
+                  <button
+                    type="button"
+                    aria-pressed={selected}
+                    className={selected ? 'selected' : ''}
+                    onClick={() => setSelectedReleaseId(item.id)}
+                    key={item.id}
+                  >
+                    <Icon aria-hidden="true" />
+                    <span>{item.platform}</span>
+                  </button>
+                )
+              })}
+            </div>
             <div className="download-actions">
-              <a className="button primary" href={trackedDownloadUrl('download_section')}>
-                <Download size={19} />下载 {release.platform}
+              <a
+                className="button primary"
+                href={trackedDownloadUrl(selectedRelease.id, 'download_section')}
+              >
+                <Download size={19} />下载 {selectedRelease.platform}
               </a>
             </div>
+            {selectedRelease.id !== 'windows-x64' && (
+              <p className="release-note">
+                当前 macOS 测试版使用临时签名，尚未完成 Apple 公证。
+              </p>
+            )}
           </div>
           <div className="release-panel">
             <div className="release-panel-head">
-              <div><span>Latest</span><strong>v{release.version}</strong></div>
+              <div><span>{selectedRelease.status}</span><strong>v{selectedRelease.version}</strong></div>
               <span className="ready"><span />可下载</span>
             </div>
             <dl>
-              <div><dt>平台</dt><dd>{release.platform}</dd></div>
-              <div><dt>文件</dt><dd>{release.fileName}</dd></div>
-              <div><dt>大小</dt><dd>{release.fileSize}</dd></div>
+              <div><dt>平台</dt><dd>{selectedRelease.platform}</dd></div>
+              <div><dt>架构</dt><dd>{selectedRelease.architecture}</dd></div>
+              <div><dt>文件</dt><dd>{selectedRelease.fileName}</dd></div>
+              <div><dt>大小</dt><dd>{selectedRelease.fileSize}</dd></div>
             </dl>
           </div>
         </div>
@@ -471,8 +532,8 @@ function App() {
           <h2>让 AI 开始推进真实任务</h2>
           <p>下载 LokSystem，把模型、Agent、技能和本地文件放进同一个工作区。</p>
         </div>
-        <a className="button light-button" href={trackedDownloadUrl('final_cta')}>
-          <Download size={19} />下载 Windows x64
+        <a className="button light-button" href="#download">
+          <Download size={19} />查看全部版本
         </a>
       </section>
 
