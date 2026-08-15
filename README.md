@@ -67,22 +67,21 @@ If that file is not present, the page falls back to a high-fidelity React produc
 
 ## Download Hosting
 
-The current primary downloads point to the mainland China update channel. Windows and Linux use the stable channel; macOS Apple Silicon uses an immutable versioned directory:
+The Windows 2.0.9 market preview uses an immutable public GitHub Release asset. Linux remains on the mainland China stable channel, and macOS Apple Silicon uses its existing immutable versioned directory:
 
 ```text
-https://update.lokai.net.cn/stable/LokSystem-2.0.8-win-x64.exe
+https://github.com/Lok447/loksystem-releases/releases/download/v2.0.9/LokSystem-2.0.9-win-x64.exe
 https://update.lokai.net.cn/stable/LokSystem-2.0.8-linux-x64.deb
 https://update.lokai.net.cn/prerelease/2.0.8-macos-beta-34c96ed/
 ```
 
 GitHub Releases remains the mirror and release-history page. Installer binaries should stay in GitHub Releases, OSS, COS, S3, or a CDN. Keep this website repository focused on the landing page, legal pages, brand assets, and release metadata; it is built and deployed independently from the LokSystem desktop application.
 
-Homepage download buttons use the first-party redirect endpoint at
-`https://api.lokai.net.cn/download/windows-x64`,
-`https://api.lokai.net.cn/download/macos-arm64`, and
+The Windows market-preview button points directly to its immutable GitHub Release asset until the production redirect service is updated. The remaining homepage download buttons use the first-party redirect endpoints at
+`https://api.lokai.net.cn/download/macos-arm64` and
 `https://api.lokai.net.cn/download/linux-x64`. These endpoints record only the
 button placement and selected platform, then redirect to the immutable CDN installer URL. Keep
-`public/releases/latest.json` pointed directly at the CDN for machine-readable
+`public/releases/latest.json` pointed directly at the immutable installer for machine-readable
 release metadata.
 
 The homepage also sends one cache-disabled, cookie-free page-view request to

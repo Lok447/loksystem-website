@@ -1,22 +1,22 @@
 {
-  "version": "2.0.8",
-  "channel": "latest",
+  "version": "2.0.9",
+  "channel": "market-preview",
   "platform": "windows-x64",
-  "fileName": "LokSystem-2.0.8-win-x64.exe",
-  "fileSize": "413.26 MB (433334724 bytes)",
-  "url": "https://update.lokai.net.cn/stable/LokSystem-2.0.8-win-x64.exe",
-  "githubReleaseUrl": "https://github.com/Lok447/loksystem-releases/releases/tag/v2.0.8",
-  "sha256": "940329D1E55637C68335080E605EF8EF763782DC95239A19A7EE284C4E710422",
-  "publishedAt": "2026-08-05",
-  "sourceBuild": "Lok447/loksystem v2.0.8",
+  "fileName": "LokSystem-2.0.9-win-x64.exe",
+  "fileSize": "388.32 MB (407178735 bytes)",
+  "url": "https://github.com/Lok447/loksystem-releases/releases/download/v2.0.9/LokSystem-2.0.9-win-x64.exe",
+  "githubReleaseUrl": "https://github.com/Lok447/loksystem-releases/releases/tag/v2.0.9",
+  "sha256": "3D3A3E00D89E867EA7524D20249074F66274AFA89A022D3283146E4C2F4693F5",
+  "publishedAt": "2026-08-15",
+  "sourceBuild": "Lok447/loksystem@39528b952 (2.0.9)",
   "platforms": [
     {
       "platform": "windows-x64",
       "status": "available",
-      "fileName": "LokSystem-2.0.8-win-x64.exe",
-      "fileSize": "413.26 MB (433334724 bytes)",
-      "url": "https://update.lokai.net.cn/stable/LokSystem-2.0.8-win-x64.exe",
-      "sha256": "940329D1E55637C68335080E605EF8EF763782DC95239A19A7EE284C4E710422"
+      "fileName": "LokSystem-2.0.9-win-x64.exe",
+      "fileSize": "388.32 MB (407178735 bytes)",
+      "url": "https://github.com/Lok447/loksystem-releases/releases/download/v2.0.9/LokSystem-2.0.9-win-x64.exe",
+      "sha256": "3D3A3E00D89E867EA7524D20249074F66274AFA89A022D3283146E4C2F4693F5"
     },
     {
       "platform": "macos-arm64",
@@ -36,11 +36,11 @@
     }
   ],
   "notes": [
-    "LokSystem 2.0.8 Windows x64 release.",
+    "LokSystem 2.0.9 Windows x64 market preview.",
     "LokSystem 2.0.8 macOS arm64 package.",
     "LokSystem 2.0.8 Linux x64 Debian package.",
-    "The homepage primary download uses the China mainland update channel.",
-    "GitHub Releases provides the mirror release page and history.",
+    "The Windows market preview is distributed from an immutable public GitHub Release asset.",
+    "macOS and Linux downloads continue to use the existing release channels.",
     "The installer is currently unsigned and Windows may show an unknown publisher warning."
   ]
 }

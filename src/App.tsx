@@ -29,10 +29,10 @@ const releases = [
     id: 'windows-x64',
     platform: 'Windows x64',
     architecture: 'x64',
-    version: '2.0.8',
-    fileName: 'LokSystem-2.0.8-win-x64.exe',
-    fileSize: '413.26 MB',
-    status: '当前版本',
+    version: '2.0.9',
+    fileName: 'LokSystem-2.0.9-win-x64.exe',
+    fileSize: '388.32 MB',
+    status: '市场验证版',
     icon: Monitor,
   },
   {
@@ -62,7 +62,9 @@ type DownloadSource = 'hero' | 'download_section' | 'final_cta'
 
 const release = releases[0]
 const trackedDownloadUrl = (platform: ReleaseId, source: DownloadSource) =>
-  `https://api.lokai.net.cn/download/${platform}?source=${source}`
+  platform === 'windows-x64'
+    ? `https://github.com/Lok447/loksystem-releases/releases/download/v2.0.9/LokSystem-2.0.9-win-x64.exe?source=${source}`
+    : `https://api.lokai.net.cn/download/${platform}?source=${source}`
 
 const capabilities = [
   {
