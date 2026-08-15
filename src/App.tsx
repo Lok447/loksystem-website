@@ -62,9 +62,7 @@ type DownloadSource = 'hero' | 'download_section' | 'final_cta'
 
 const release = releases[0]
 const trackedDownloadUrl = (platform: ReleaseId, source: DownloadSource) =>
-  platform === 'windows-x64'
-    ? `https://github.com/Lok447/loksystem-releases/releases/download/v2.0.9/LokSystem-2.0.9-win-x64.exe?source=${source}`
-    : `https://api.lokai.net.cn/download/${platform}?source=${source}`
+  `https://api.lokai.net.cn/download/${platform}?source=${source}`
 
 const capabilities = [
   {
