@@ -72,7 +72,7 @@ The Windows 2.0.9 market preview and Linux package use the mainland China stable
 ```text
 https://update.lokai.net.cn/stable/LokSystem-2.0.9-win-x64.exe
 https://update.lokai.net.cn/stable/LokSystem-2.0.8-linux-x64.deb
-https://update.lokai.net.cn/prerelease/2.0.8-macos-beta-34c96ed/
+https://update.lokai.net.cn/prerelease/LokSystem-2.0.9-mac-arm64.dmg
 ```
 
 GitHub Releases remains the mirror and release-history page. Installer binaries should stay in GitHub Releases, OSS, COS, S3, or a CDN. Keep this website repository focused on the landing page, legal pages, brand assets, and release metadata; it is built and deployed independently from the LokSystem desktop application.
