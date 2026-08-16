@@ -32,7 +32,7 @@ const releases = [
     version: '2.0.9',
     fileName: 'LokSystem-2.0.9-win-x64.exe',
     fileSize: '388.32 MB',
-    status: '市场验证版',
+    status: '当前版本',
     icon: Monitor,
   },
   {
@@ -42,7 +42,7 @@ const releases = [
     version: '2.0.9',
     fileName: 'LokSystem-2.0.9-mac-arm64.dmg',
     fileSize: '329.28 MB',
-    status: '市场验证版',
+    status: '当前版本',
     icon: Laptop,
   },
   {
